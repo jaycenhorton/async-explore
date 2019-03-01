@@ -1,0 +1,9 @@
+{
+  "name": "async-explore",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "microjob": "^0.4.2"
+  }
+}
