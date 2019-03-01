@@ -10,9 +10,9 @@ const asyncFunc = async () => {
 const exec = async time => {
   await asyncFunc();
   setTimeout(() => {
-    console.log('5 second operation finishing in exec');
+    console.log('Finished 5 second operation in exec');
     const end = process.hrtime.bigint();
-    console.log(`Benchmark took ${end - time}ms`);
+    console.log(`Benchmark took ${end - time} nanoseconds`);
   }, 5000);
 };
 const time = process.hrtime.bigint();

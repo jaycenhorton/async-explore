@@ -24,7 +24,7 @@ const obj = {
     setTimeout(() => {
       console.log('Finished 5 second operation in asyncFunc');
       const end = process.hrtime.bigint();
-      console.log(`Benchmark took ${end - time}ms`);
+      console.log(`Benchmark took ${end - time} nanoseconds`);
     }, 5000);
   },
 };

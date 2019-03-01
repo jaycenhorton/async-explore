@@ -13,14 +13,9 @@ function traceMethodCalls(obj) {
               async data =>
                 new Promise(resolve => {
                   setTimeout(() => {
-                    console.log(
-                      'Finished 5 second operation asyncFuncInProxy',
-                      data.time
-                    );
+                    console.log('Finished 5 second operation asyncFuncInProxy');
                     const end = process.hrtime.bigint();
-                    console.log(
-                      `Benchmark took ${end - data.time} nanoseconds`
-                    );
+                    resolve(`Benchmark took ${end - data.time} nanoseconds`);
                   }, 5000);
                 }),
               { data: { time: args[0] } }
@@ -42,7 +37,7 @@ function traceMethodCalls(obj) {
 }
 const obj = {
   async asyncFunc(time) {
-    await new Promise(resolve => {
+    return new Promise(resolve => {
       setTimeout(() => {
         console.log('Finished 5 second operation in asyncFunc');
         resolve();
